@@ -1,0 +1,35 @@
+.pointLoader {
+    display: flex;
+    transition: all 0.4s;
+  }
+  
+  .pointLoader div {
+    margin-left: 0.5rem;
+    margin-top: 1.3rem;
+    background-color: rgb(34, 34, 34);
+    border-radius: 100%;
+    height: 0.4rem;
+    width: 0.4rem;
+  }
+  
+  .box-load1 {
+    animation: brighten 1.2s infinite;
+  }
+  
+  .box-load2 {
+    animation: brighten 1.2s infinite;
+    animation-delay: .2s;
+  }
+  
+  .box-load3 {
+    animation: brighten 1.2s infinite;
+    animation-delay: .4s;
+  }
+  
+  @keyframes brighten {
+    100% {
+      background-color: rgb(165, 165, 165);
+      box-shadow: none;
+    }
+  }
+  

@@ -1,0 +1,104 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produits",
+  "info": {
+    "singularName": "produit",
+    "pluralName": "produits",
+    "displayName": "Produit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "prix": {
+      "required": true,
+      "type": "decimal"
+    },
+    "PreviewDescription": {
+      "type": "text",
+      "maxLength": 105,
+      "required": false,
+      "default": " "
+    },
+    "PreviewImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categorie.categorie",
+      "inversedBy": "produits"
+    },
+    "DetailImage": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "DetailDescription": {
+      "type": "text",
+      "required": true
+    },
+    "IllustrationImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "FirstIllustrationImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "DetailTitre": {
+      "type": "string",
+      "required": true
+    },
+    "FicheTechnique": {
+      "type": "blocks",
+      "required": true
+    },
+    "cart_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "produit"
+    },
+    "cart": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cart.cart",
+      "inversedBy": "produits"
+    }
+  }
+}

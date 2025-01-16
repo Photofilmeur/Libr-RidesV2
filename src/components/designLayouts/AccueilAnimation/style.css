@@ -1,0 +1,112 @@
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background-color: black;
+}
+
+.circle {
+  transition: transform 0.5s ease-in-out;
+}
+
+.animate-circleScale {
+  animation: circleScale 0.5s ease-in-out forwards;
+}
+
+@keyframes circleScale {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.logo {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.animate-logoFade {
+  animation: logoFadeIn 0.5s ease-in-out 0.2s forwards;
+}
+
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.logo-container {
+  position: absolute;
+}
+
+.animate-moveLogo {
+  animation: moveLogo 0.5s ease-in-out 0.8s forwards;
+}
+
+@keyframes moveLogo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
+
+.text-mask {
+  height: 40px;
+  width: 500px;
+}
+
+.text-mask-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-56%, -50%);
+  text-align: center;
+}
+
+.animate-textSlideUp1 {
+  animation: textSlideUp 0.3s ease-in-out 1s forwards;
+  display: inline-block;
+  transform: translate(100px, 150%);
+}
+
+.animate-textSlideUp2 {
+  animation: textSlideUp 0.3s ease-in-out 1.2s forwards;
+  display: inline-block;
+  transform: translate(100px, 150%);
+}
+
+@keyframes textSlideUp {
+  0% {
+    transform: translate(100px, 150%);
+  }
+  100% {
+    transform: translate(100px, 0);
+  }
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

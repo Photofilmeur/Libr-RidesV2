@@ -1,0 +1,103 @@
+/*------ Settings ------*/
+.container {
+  --color: #ffffff;
+  --size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+}
+
+.container .chevron-down {
+  position: absolute;
+  transition: transform 0.5s ease;
+}
+
+/* Texte "LIRE LA SUITE" caché par défaut */
+.tooltip-text,
+.tooltip-close {
+  position: absolute;
+  top: 30px; /* Position en dessous du chevron */
+  font-size: 14px;
+  color: var(--color);
+  opacity: 0; /* Caché par défaut */
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none; /* Désactive les événements souris */
+  color: red;
+}
+
+
+/* Lorsque le chevron est vers le haut et survolé, on affiche "LIRE LA SUITE" */
+.container input:not(:checked):hover ~ .tooltip-text {
+  opacity: 1; /* Le texte devient visible */
+  pointer-events: auto; /* Active les événements souris quand visible */
+}
+
+/* Lorsque le chevron est vers le bas et survolé, on affiche "FERMER" */
+.container input:checked:hover ~ .tooltip-close {
+  opacity: 1; /* Le texte devient visible */
+  pointer-events: auto; /* Active les événements souris quand visible */
+}
+
+/* Chevron tourne vers le bas lorsque coché */
+.container input:checked ~ .chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Masquer le texte "LIRE LA SUITE" si le chevron est vers le bas (coché) */
+.container input:checked ~ .tooltip-text {
+  opacity: 0;
+  pointer-events: none; /* Désactive les événements souris */
+}
+
+/* Masquer le texte "FERMER" si le chevron est vers le haut (décoché) */
+.container input:not(:checked) ~ .tooltip-close {
+  opacity: 0;
+  pointer-events: none; /* Désactive les événements souris */
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+@media (max-width: 667px) {
+  .container {
+    --color: red;
+  }
+  .container input:checked{
+    color: var(--color)
+  }
+  .tooltip-text, .tooltip-close {
+    color: #ffffff;
+  }
+ 
+  /* Masquer le texte "LIRE LA SUITE" si le chevron est vers le bas (coché) */
+  .container input:checked ~ .tooltip-close {
+    opacity: 1;
+    pointer-events: none; /* Désactive les événements souris */
+  }
+
+  /* Masquer le texte "FERMER" si le chevron est vers le haut (décoché) */
+  .container input:not(:checked) ~ .tooltip-text {
+    opacity: 1;
+    pointer-events: none; /* Désactive les événements souris */
+  }
+
+  /* ------ Hide the default checkbox ------ */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}

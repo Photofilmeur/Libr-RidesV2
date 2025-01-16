@@ -1,0 +1,122 @@
+.body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0 24px;
+  height: 100vh;
+  background-color: #222;
+  background-image: radial-gradient(at 88% 0%, #b81717 5px, transparent 50%),
+    radial-gradient(at 63% 46%, hsla(0, 0%, 41%, 1) 20px, transparent 50%),
+    radial-gradient(at 95% 53%, hsla(0, 0%, 47%, 1) 30px, transparent 50%),
+    radial-gradient(at 79% 83%, #222 40px, transparent 50%),
+    radial-gradient(at 74% 93%, #333 50px, transparent 50%),
+    radial-gradient(at 52% 13%, #444 60px, transparent 50%),
+    radial-gradient(at 30% 80%, #555 70px, transparent 50%);
+  color: #000;
+  animation: rotate 6s infinite alternate linear;
+
+  @media (min-width: 500px) {
+    padding: 0;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    background-position: 15% 50%;
+  }
+}
+
+.login {
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  padding: 70px 30px 44px;
+  border-radius: 1.25rem;
+  background: #fff;
+  text-align: center;
+
+  @media (min-width: 450px) {
+    width: 380px;
+  }
+
+  @media (min-width: 700px) {
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: none;
+    margin: 0;
+    height: 100%;
+    border-radius: 0;
+    padding-top: 240px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 25%;
+  }
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #000;
+  text-align: center;
+}
+
+.subtitle {
+  color: #b81717;
+  margin: 0 0 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.login-form {
+  display: grid;
+  gap: 30px;
+  place-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 240px;
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  text-align: center;
+  height: 56px;
+  outline: none;
+}
+
+.toggle-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #b81717;
+  width: auto;
+}
+
+.link {
+  color: #000;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #b81717;
+}
