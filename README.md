@@ -1,4 +1,4 @@
----
+
 
 ## Prerequisites
 
@@ -80,4 +80,3 @@ npm start
 
 The backend server will run on its designated port (usually `http://localhost:`1337 or http\://localhost:1337/admin ).
 
----
