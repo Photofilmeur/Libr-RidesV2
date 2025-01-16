@@ -13,7 +13,7 @@ Before you can run this project, ensure you have the following installed on your
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Photofilmeur/Libr-RidesV2.git
 ```
 
 ### 2. Navigate to the project directory:
